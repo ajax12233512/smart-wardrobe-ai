@@ -1,0 +1,38 @@
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Azure credentials
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Private keys
+*.pem
+*.key
+*.pfx
+
+# Camera images
+*.jpg
+*.jpeg
+*.png
+photos/
+pictures/
+
+# Local databases
+*.db
+temperature_data.json
+
+# Logs
+*.log
+
+# Operating system
+.DS_Store
+Thumbs.db
