@@ -1,4 +1,4 @@
-\# Smart Wardrobe AI
+# Smart Wardrobe AI
 
 
 
@@ -6,7 +6,7 @@ An IoT-powered clothing recommendation system using Raspberry Pi 5, computer vis
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -22,29 +22,29 @@ The results, including the photograph, temperature, and AI analysis, are uploade
 
 
 
-\## Features
+## Features
 
 
 
-\- Capture clothing images using Picamera2
+- Capture clothing images using Picamera2
 
-\- Analyze existing JPG and PNG images
+- Analyze existing JPG and PNG images
 
-\- Measure temperature using a TMP102 sensor
+- Measure temperature using a TMP102 sensor
 
-\- Identify clothing using Ollama and Gemma 3
+- Identify clothing using Ollama and Gemma 3
 
-\- Recommend clothing based on ambient temperature
+- Recommend clothing based on ambient temperature
 
-\- Save photographs to Azure Blob Storage
+- Save photographs to Azure Blob Storage
 
-\- Store sensor readings and recommendations in Azure Table Storage
+- Store sensor readings and recommendations in Azure Table Storage
 
-\- View previous scans through a Streamlit dashboard
+- View previous scans through a Streamlit dashboard
 
 
 
-\## Technologies Used
+## Technologies Used
 
 
 
@@ -70,25 +70,25 @@ The results, including the photograph, temperature, and AI analysis, are uploade
 
 
 
-\## Hardware Requirements
+## Hardware Requirements
 
 
 
-\- Raspberry Pi 5 (8 GB recommended)
+- Raspberry Pi 5 (8 GB recommended)
 
-\- Raspberry Pi Camera Module
+- Raspberry Pi Camera Module
 
-\- TMP102 temperature sensor
+- TMP102 temperature sensor
 
-\- Jumper wires
+- Jumper wires
 
-\- Power supply
+- Power supply
 
-\- Internet connection for Azure uploads
+- Internet connection for Azure uploads
 
 
 
-\## TMP102 Connections
+## TMP102 Connections
 
 
 
@@ -110,11 +110,11 @@ The TMP102 commonly uses I²C address `0x48`. Depending on the ADD0 connection, 
 
 
 
-\## Installation
+## Installation
 
 
 
-\### 1. Download the project
+### 1. Download the project
 
 
 
@@ -124,7 +124,7 @@ Clone the repository:
 
 ```bash
 
-git clone https://github.com/YOUR\_USERNAME/smart-wardrobe-ai.git
+git clone https://github.com/YOUR_USERNAME/smart-wardrobe-ai.git
 
 cd smart-wardrobe-ai
 
@@ -132,11 +132,11 @@ cd smart-wardrobe-ai
 
 
 
-Alternatively, click \*\*Code → Download ZIP\*\* on GitHub.
+Alternatively, click **Code → Download ZIP** on GitHub.
 
 
 
-\### 2. Configure the Raspberry Pi
+### 2. Configure the Raspberry Pi
 
 
 
@@ -152,7 +152,7 @@ sudo raspi-config
 
 
 
-Select \*\*Interface Options → I2C → Enable\*\*.
+Select **Interface Options → I2C → Enable**.
 
 
 
@@ -196,7 +196,7 @@ python -m pip install ollama smbus2 tinydb azure-storage-blob azure-data-tables 
 
 
 
-\### 3. Install Ollama
+### 3. Install Ollama
 
 
 
@@ -216,7 +216,7 @@ ollama pull gemma3:4b
 
 
 
-\### 4. Configure Azure Storage
+### 4. Configure Azure Storage
 
 
 
@@ -224,9 +224,9 @@ Create an Azure Storage account with:
 
 
 
-\- A Blob container named `clothing-images`
+- A Blob container named `clothing-images`
 
-\- A Table named `ClothingReadings`
+- A Table named `ClothingReadings`
 
 
 
@@ -236,7 +236,7 @@ Create a `.env` file in the application's working directory:
 
 ```dotenv
 
-AZURE\_STORAGE\_CONNECTION\_STRING="YOUR\_CONNECTION\_STRING"
+AZURE_STORAGE_CONNECTION_STRING="YOUR_CONNECTION_STRING"
 
 ```
 
@@ -246,17 +246,17 @@ Keep the connection string private.
 
 
 
-\### 5. Run the clothing AI
+### 5. Run the clothing AI
 
 
 
-Navigate to the directory containing `clothing\_ai.py` and run:
+Navigate to the directory containing `clothing_ai.py` and run:
 
 
 
 ```bash
 
-python clothing\_ai.py
+python clothing_ai.py
 
 ```
 
@@ -270,7 +270,7 @@ The application measures the temperature, generates a recommendation, and upload
 
 
 
-\## Running the Streamlit Dashboard
+## Running the Streamlit Dashboard
 
 
 
@@ -314,7 +314,7 @@ The dashboard displays captured images, temperatures, AI recommendations, and pr
 
 
 
-\## System Architecture
+## System Architecture
 
 
 
@@ -360,37 +360,37 @@ Clothing Recommendation
 
 
 
-\## Limitations
+## Limitations
 
 
 
-\- AI inference may be slow when running directly on the Raspberry Pi CPU.
+- AI inference may be slow when running directly on the Raspberry Pi CPU.
 
-\- The TMP102 measures local ambient temperature, not necessarily outdoor weather.
+- The TMP102 measures local ambient temperature, not necessarily outdoor weather.
 
-\- Clothing recommendations depend on visual interpretation and temperature alone.
+- Clothing recommendations depend on visual interpretation and temperature alone.
 
-\- Azure uploads and the cloud dashboard require internet connectivity.
-
-
-
-\## Future Improvements
+- Azure uploads and the cloud dashboard require internet connectivity.
 
 
 
-\- Faster AI models and GPU-assisted inference
-
-\- A publicly hosted dashboard using Azure App Service
-
-\- Automated refresh when new clothing scans are uploaded
-
-\- Clothing categorization and searchable scan history
-
-\- Additional environmental sensors
+## Future Improvements
 
 
 
-\## License
+- Faster AI models and GPU-assisted inference
+
+- A publicly hosted dashboard using Azure App Service
+
+- Automated refresh when new clothing scans are uploaded
+
+- Clothing categorization and searchable scan history
+
+- Additional environmental sensors
+
+
+
+## License
 
 
 
